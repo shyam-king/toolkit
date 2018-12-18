@@ -43,6 +43,7 @@ int main()
 ```
 
 <h4>output</h4>
+
 ```
 H
 llo
