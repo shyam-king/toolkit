@@ -1,6 +1,7 @@
 #include "Image.h"
 
 using namespace Image::PNG;
+using namespace Image;
 
 HANDLE::HANDLE(const char *filename)
 {
@@ -80,53 +81,53 @@ HANDLE::~HANDLE()
 		delete dataChunk;
 }
 
-RESULT HANDLE::width()
+uint32_t HANDLE::width()
 {
 	if (!headerAvailable)
-		return (RESULT("No header details"));
-	return (RESULT(SUCCESS, (void *)(&(header.width))));
+		return (0);
+	return (header.width);
 }
 
-RESULT HANDLE::height()
+uint32_t HANDLE::height()
 {
 	if (!headerAvailable)
-		return (RESULT("No header details"));
-	return (RESULT(SUCCESS, (void *)(&(header.height))));
+		return (0);
+	return (header.height);
 }
 
-RESULT HANDLE::colorType()
+uint16_t HANDLE::colorType()
 {
 	if (!headerAvailable)
-		return (RESULT("No header details"));
-	return (RESULT(SUCCESS, (void *)(&(header.colorType))));
+		return (0);
+	return (header.colorType);
 }
 
-RESULT HANDLE::bitDepth()
+uint16_t HANDLE::bitDepth()
 {
 	if (!headerAvailable)
-		return (RESULT("No header details"));
-	return (RESULT(SUCCESS, (void *)(&(header.bitDepth))));
+		return (0);
+	return (header.bitDepth);
 }
 
-RESULT HANDLE::compressionMethod()
+uint16_t HANDLE::compressionMethod()
 {
 	if (!headerAvailable)
-		return (RESULT("No header details"));
-	return (RESULT(SUCCESS, (void *)(&(header.compressionMethod))));
+		return (0);
+	return (header.compressionMethod);
 }
 
-RESULT HANDLE::filterMethod()
+uint16_t HANDLE::interlaceMethod()
 {
 	if (!headerAvailable)
-		return (RESULT("No header details"));
-	return (RESULT(SUCCESS, (void *)(&(header.filterMethod))));
+		return (0);
+	return (header.interlaceMethod);
 }
 
-RESULT HANDLE::interlaceMethod()
+uint16_t HANDLE::filterMethod()
 {
 	if (!headerAvailable)
-		return (RESULT("No header details"));
-	return (RESULT(SUCCESS, (void *)(&(header.interlaceMethod))));
+		return (0);
+	return (header.filterMethod);
 }
 
 RESULT HANDLE::loadData()
@@ -499,4 +500,15 @@ uint32_t Image::endian_swap (uint32_t data)
 	p[1] = t;
 
 	return data;
+}
+/*
+ *	NEEDS TO BE IMPLEMENTED
+ * */
+RESULT HANDLE::saveData(const char *filename)
+{
+	ofstream op(filename, ios::binary);
+	char header[] = {0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a};
+	op.write(header, 8);
+	
+	return (RESULT(SUCCESS, NULL));
 }
