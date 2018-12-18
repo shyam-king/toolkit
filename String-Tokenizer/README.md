@@ -6,8 +6,8 @@ This is a C++ library that implements a StringTokenizer class similar to the one
 ## Installation
 
 ### Prerequisites
-CMake
-git (for cloning repository or download as a zip)
+1) CMake
+2) git (for cloning repository or download as a zip)
 
 ### For Ubuntu Linux and similar distros 
 
