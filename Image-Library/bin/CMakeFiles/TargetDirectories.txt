@@ -1,4 +1,6 @@
+/home/shyam/Projects/Image-Library/bin/CMakeFiles/edit_cache.dir
 /home/shyam/Projects/Image-Library/bin/CMakeFiles/rebuild_cache.dir
 /home/shyam/Projects/Image-Library/bin/CMakeFiles/Main.dir
-/home/shyam/Projects/Image-Library/bin/CMakeFiles/edit_cache.dir
-/home/shyam/Projects/Image-Library/bin/CMakeFiles/tool.dir
+/home/shyam/Projects/Image-Library/bin/Image/CMakeFiles/rebuild_cache.dir
+/home/shyam/Projects/Image-Library/bin/Image/CMakeFiles/edit_cache.dir
+/home/shyam/Projects/Image-Library/bin/Image/CMakeFiles/Image.dir

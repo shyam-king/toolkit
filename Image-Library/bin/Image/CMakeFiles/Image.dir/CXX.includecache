@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/home/shyam/Projects/Image-Library/source/Image/Image.cpp
+Image.h
+/home/shyam/Projects/Image-Library/source/Image/Image.h
+
 /home/shyam/Projects/Image-Library/source/Image/Image.h
 fstream
 -
@@ -14,11 +18,5 @@ iostream
 stdint.h
 -
 cstring
--
-
-/home/shyam/Projects/Image-Library/source/main.cpp
-iostream
--
-Image.h
 -
 

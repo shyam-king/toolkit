@@ -1,0 +1,12 @@
+Image/libImage.a(Image.o): In function `Image::PNG::HANDLE::readHeader()':
+Image.cpp:(.text+0x1d8): undefined reference to `Image::endian_swap(unsigned int)'
+Image.cpp:(.text+0x277): undefined reference to `Image::endian_swap(unsigned int)'
+Image.cpp:(.text+0x28e): undefined reference to `Image::endian_swap(unsigned int)'
+Image/libImage.a(Image.o): In function `Image::PNG::HANDLE::loadData()':
+Image.cpp:(.text+0x765): undefined reference to `Image::endian_swap(unsigned int)'
+Image.cpp:(.text+0x9c2): undefined reference to `Image::endian_swap(unsigned int)'
+Image/libImage.a(Image.o):Image.cpp:(.text+0xbb5): more undefined references to `Image::endian_swap(unsigned int)' follow
+collect2: error: ld returned 1 exit status
+make[2]: *** [Main] Error 1
+make[1]: *** [CMakeFiles/Main.dir/all] Error 2
+make: *** [all] Error 2

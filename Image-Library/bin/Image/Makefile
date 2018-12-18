@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/shyam/Projects/Image-Library/bin
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -78,16 +67,27 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/shyam/Projects/Image-Library/bin/CMakeFiles /home/shyam/Projects/Image-Library/bin/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
+	cd /home/shyam/Projects/Image-Library/bin && $(CMAKE_COMMAND) -E cmake_progress_start /home/shyam/Projects/Image-Library/bin/CMakeFiles /home/shyam/Projects/Image-Library/bin/Image/CMakeFiles/progress.marks
+	cd /home/shyam/Projects/Image-Library/bin && $(MAKE) -f CMakeFiles/Makefile2 Image/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/shyam/Projects/Image-Library/bin/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	cd /home/shyam/Projects/Image-Library/bin && $(MAKE) -f CMakeFiles/Makefile2 Image/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,59 +97,48 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/shyam/Projects/Image-Library/bin && $(MAKE) -f CMakeFiles/Makefile2 Image/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/shyam/Projects/Image-Library/bin && $(MAKE) -f CMakeFiles/Makefile2 Image/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/shyam/Projects/Image-Library/bin && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named Main
+# Convenience name for target.
+Image/CMakeFiles/Image.dir/rule:
+	cd /home/shyam/Projects/Image-Library/bin && $(MAKE) -f CMakeFiles/Makefile2 Image/CMakeFiles/Image.dir/rule
+.PHONY : Image/CMakeFiles/Image.dir/rule
 
-# Build rule for target.
-Main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Main
-.PHONY : Main
+# Convenience name for target.
+Image: Image/CMakeFiles/Image.dir/rule
 
-# fast build rule for target.
-Main/fast:
-	$(MAKE) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/build
-.PHONY : Main/fast
-
-#=============================================================================
-# Target rules for targets named Image
-
-# Build rule for target.
-Image: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Image
 .PHONY : Image
 
 # fast build rule for target.
 Image/fast:
-	$(MAKE) -f Image/CMakeFiles/Image.dir/build.make Image/CMakeFiles/Image.dir/build
+	cd /home/shyam/Projects/Image-Library/bin && $(MAKE) -f Image/CMakeFiles/Image.dir/build.make Image/CMakeFiles/Image.dir/build
 .PHONY : Image/fast
 
 # target to build an object file
-main.o:
-	$(MAKE) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/main.o
-.PHONY : main.o
+Image.o:
+	cd /home/shyam/Projects/Image-Library/bin && $(MAKE) -f Image/CMakeFiles/Image.dir/build.make Image/CMakeFiles/Image.dir/Image.o
+.PHONY : Image.o
 
 # target to preprocess a source file
-main.i:
-	$(MAKE) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/main.i
-.PHONY : main.i
+Image.i:
+	cd /home/shyam/Projects/Image-Library/bin && $(MAKE) -f Image/CMakeFiles/Image.dir/build.make Image/CMakeFiles/Image.dir/Image.i
+.PHONY : Image.i
 
 # target to generate assembly for a file
-main.s:
-	$(MAKE) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/main.s
-.PHONY : main.s
+Image.s:
+	cd /home/shyam/Projects/Image-Library/bin && $(MAKE) -f Image/CMakeFiles/Image.dir/build.make Image/CMakeFiles/Image.dir/Image.s
+.PHONY : Image.s
 
 # Help Target
 help:
@@ -157,13 +146,12 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Main"
+	@echo "... edit_cache"
 	@echo "... Image"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... Image.o"
+	@echo "... Image.i"
+	@echo "... Image.s"
 .PHONY : help
 
 
@@ -175,6 +163,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/shyam/Projects/Image-Library/bin && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
