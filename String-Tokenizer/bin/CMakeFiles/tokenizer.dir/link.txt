@@ -1,0 +1,1 @@
+/usr/bin/c++        -o tokenizer -rdynamic StringTokenizer/libStringTokenizer.a 

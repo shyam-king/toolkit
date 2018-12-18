@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/tokenize.dir/tokenize.o  -o tokenize -rdynamic StringTokenizer/libStringTokenizer.a 

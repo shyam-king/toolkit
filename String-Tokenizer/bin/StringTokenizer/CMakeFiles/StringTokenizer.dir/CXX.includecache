@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/shyam/Projects/String-Tokenizer/source/StringTokenizer/StringTokenizer.cpp
+StringTokenizer.h
+/home/shyam/Projects/String-Tokenizer/source/StringTokenizer/StringTokenizer.h
+cstring
+-
+
+/home/shyam/Projects/String-Tokenizer/source/StringTokenizer/StringTokenizer.h
+
