@@ -18,3 +18,37 @@ C-style escape characters are also allowed (not all of them):</br>
 returns if there is a token available to read.
 <h4> const char * nextToken() </h4>
 returns the next token read. If there are no tokens left result is undefined. Hence, always use <i>hasToken()</i> before invoking <i>nextToken()</i>
+
+
+## Example code snippet
+
+<h4>source</h4>
+
+```c++
+#include<StringTokenizer.h>
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+	char text[] = "Hello this is a test.";
+	StringTokenizer tokens(text, " e");
+	while (tokens.hasToken())
+	{
+		cout << tokens.nextToken() << endl;
+	}
+	return 0;
+}
+```
+
+<h4>output</h4>
+```
+H
+llo
+this
+is
+a
+t
+st.
+```
