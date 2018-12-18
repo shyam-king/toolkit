@@ -1,0 +1,3 @@
+/bin/tokenize
+/usr/include/StringTokenizer.h
+/usr/lib/libStringTokenizer.a

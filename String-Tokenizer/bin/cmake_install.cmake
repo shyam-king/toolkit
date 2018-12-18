@@ -32,6 +32,30 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
   set(CMAKE_INSTALL_SO_NO_EXE "1")
 endif()
 
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  if(EXISTS "$ENV{DESTDIR}/bin/tokenize" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/bin/tokenize")
+    file(RPATH_CHECK
+         FILE "$ENV{DESTDIR}/bin/tokenize"
+         RPATH "")
+  endif()
+  list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
+   "/bin/tokenize")
+  if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+file(INSTALL DESTINATION "/bin" TYPE EXECUTABLE FILES "/home/shyam/Projects/String-Tokenizer/bin/tokenize")
+  if(EXISTS "$ENV{DESTDIR}/bin/tokenize" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/bin/tokenize")
+    if(CMAKE_INSTALL_DO_STRIP)
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/bin/tokenize")
+    endif()
+  endif()
+endif()
+
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/shyam/Projects/String-Tokenizer/bin/StringTokenizer/cmake_install.cmake")
