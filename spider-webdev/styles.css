@@ -1,0 +1,61 @@
+div.header {
+	background-color: #8bc34a;
+	margin: 8px;
+	padding: 8px;
+	height: 64px;
+	width:95%; 
+}
+
+.header p{
+	font-size: 40px;  
+	margin: 0px;
+	padding:8px;
+	font-family:"Roboto Condensed";
+	font-weight:normal;
+}
+
+div.content {
+	text-align:center;
+	margin:8px;
+	padding=8px;
+	width:95%
+}
+
+.content h1 {
+	font-family:"Roboto Condensed";
+	font-weight:normal;
+	font-size:32px;
+	background-color:#aed581;
+	margin:8px;
+	padding:8px;
+}
+
+.content p {
+	font-size:24px;
+	font-weight:100;
+	font-family:"Roboto Condensed";
+}
+
+.content form {
+	font-family:"Slabo 27px", "Serif";
+	font-size:22px;
+	font-weight:100;
+}
+
+.content label {
+	margin:4px;
+	padding:4px;
+}
+
+.content input{
+	font-family:"Slabo 27px", "Serif";
+	font-size:22px;
+	margin:4px;
+	padding:4px;
+}
+
+.content input[type=radio] {
+	height:16px;
+	width:16px;
+}
+

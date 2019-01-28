@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title> ILLUMINATI </title>
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+		<link rel="stylesheet" href="./styles.css" />
+	</head>
+	<body>
+		<div class="header">
+			<div style="float:left">
+			<img src="./illuminati.jpeg" width="64px" height="64px" />
+			</div>
+			<div style="float:left">
+				<p>ILLUMINATI</p>
+			</div>
+		</div>
+		</br>
+		<div class="content">
+			<div style="float:left; width:50%;">
+				<h1>About</h1>
+				<p>An Enlightenment-era secret society founded on 1 May 1776. Our goals are to oppose superstition, obscurantism, religious influence over public life, and abuses of state power.</p>
+			</div>
+			<div style="float:right; width:50%;">
+				<h1>Join</h1>
+				<p>Fill the following form to join the dark side:</p>
+				</br>
+				<form action="scripts/submit.php" method="post">
+					<label> Name : </label>
+					<input type="text" placeholder="Name" name="uname"/>
+					</br>
+					<label> Age : </label>
+					<input type="number" placeholder="18" name="age" />
+					</br>
+					<label> Gender : </label>
+					<input type="radio" name="gender" value="M">Male</input>
+					<input type="radio" name="gender" value="F">Female</input>
+					</br>
+					<input type="submit" value="submit"/>
+				</form>
+			</div>
+		</div>
+		<script src="scripts/script.js" type="text/javascript"/>
+	</body>
+</html>
